@@ -1,0 +1,135 @@
+% !TeX root = ./main.tex
+
+% TEMPLATE thesis UniPD
+
+\documentclass[a4paper,12pt]{memoir} % memoir is book with abstract support
+
+\usepackage[a-1b]{pdfx} % Generate a PDF/A
+
+\pdfpagewidth\paperwidth
+\pdfpageheight\paperheight
+
+\usepackage[italian]{babel} % [english]
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{lmodern,amsmath,amssymb,graphicx}
+
+% Useful for SI units:
+%\usepackage[per-mode=fraction,binary-units]{siunitx}
+
+% Useful for bibliography:
+%\usepackage[style=alphabetic,natbib=false,doi=true,url=false]{biblatex}
+
+% If you want to use subsections:
+%\setsecnumdepth{subsection}
+
+\aliaspagestyle{chapter}{empty} % No page number on new chapter page
+
+% Small margins:
+\setulmarginsandblock{3cm}{*}{*}
+\setlrmarginsandblock{2cm}{*}{*}
+\checkandfixthelayout
+
+\title{Thesis title}
+\author{Candidate}
+\date{Discussion date}
+
+% METADATA for PDF
+\begin{filecontents*}{\jobname.xmpdata}
+\Title{Thesis title}
+\Author{Candidate}
+\Language{it-IT} %{en-US}
+\Date{YYYY-MM-DD}
+\Keywords{keyword1\sep keyqord2\sep keyword3}
+\end{filecontents*}
+
+\hypersetup{hidelinks} % Hide link color boxes on pdf
+
+% Import bibliography:
+%\addbibresource{references.bib}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% COVER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \frontmatter
+  \begin{titlingpage} % titlepage in book
+    \vspace{5mm}
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[scale=.13]{logo.png}
+    \end{figure}
+    \vspace{5mm}
+    \begin{center}
+      {{\Large{\textsc{\textbf{UNIVERSITÀ DEGLI STUDI DI PADOVA}}}}\\}
+      \vspace{5mm}
+      {\textbf{Dipartimento di XXXXXXXXXXXX}} \\ % Department of XXXXXXXXXXXX
+      \vspace{5mm}
+      {\textsc{\textbf{Corso di Laurea Triennale/Magistrale in XXXXXXXXXXXX}}}\\ % Master's Degree in
+      \vspace{20mm}
+      {\textsc{\textbf{Tesi di Laurea}}}\\ % Final Dissertation
+      \vspace{25mm}
+      \begin{Spacing}{3}
+        {\Large \textbf{\thetitle}}\\
+      \end{Spacing}
+      \vspace{8mm}
+    \end{center}
+
+    \vspace{15mm}
+    \begin{Spacing}{1.5}
+      \begin{tabular}{p{0.3\textwidth} p{0.3\textwidth} p{0.3\textwidth}}
+        Relatore && Laureando\\ % Supervisor && Candidate
+        \textbf{prof. XXXXXX} && \textbf{\theauthor}\\
+        Correlatori && \textbf{Badge Number}\\ % Co-supervisors
+        \textbf{dott. XXXXXX} && \\ % Dr.
+        \textbf{dott. XXXXXX} && \\ % Dr.
+      \end{tabular}
+    \end{Spacing}
+    \vspace{8 mm}
+    \begin{center}
+      \textbf{Anno Accademico YYYY/YYYY} % Academic Year
+          \vspace{5 mm}\\\textbf{\thedate}
+    \end{center}
+  \end{titlingpage}
+  \clearpage{\pagestyle{empty}\cleardoublepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ABSTRACT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{abstract}
+    Abstract in main language.
+  \end{abstract}
+  \newpage
+% If abstract is required also in another language:
+% requires: \usepackage[italian, english]{babel}
+%   \begin{otherlanguage}{italian}
+%     \begin{abstract}
+%       Abstract in second language.
+%     \end{abstract}
+%   \end{otherlanguage}
+%   \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TABLE OF CONTENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \tableofcontents
+  \newpage
+  \listoffigures
+  \listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \mainmatter
+
+%   \input{section/intro}
+%   \input{section/more}
+%   \input{section/trials}
+%   \input{section/results}
+%   \input{section/conclusions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \backmatter
+
+  %\renewcommand{\bibname}{References}
+  %\printbibliography
+
+\end{document}
