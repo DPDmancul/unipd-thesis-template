@@ -6,9 +6,6 @@
 
 \usepackage[a-1b]{pdfx} % Generate a PDF/A
 
-\pdfpagewidth\paperwidth
-\pdfpageheight\paperheight
-
 \usepackage[italian]{babel} % [english]
 
 \usepackage[utf8]{inputenc}
@@ -34,16 +31,27 @@
 
 \title{Thesis title}
 \author{Candidate}
-\date{Discussion date}
+\def\theday{31}
+\def\themonth{2}
+\def\theyear{2000}
+\def\thelang{it-IT} % or {en-US}
 
-% METADATA for PDF
-\begin{filecontents*}{\jobname.xmpdata}
-\Title{Thesis title}
-\Author{Candidate}
-\Language{it-IT} %{en-US}
-\Date{YYYY-MM-DD}
+\usepackage[\thelang]{datetime2}
+\date{\DTMdisplaydate\theyear\themonth\theday{}}
+
+% TODO add keywords
+\bgroup
+\DTMsetstyle{iso}
+\def\isodate{\DTMdisplaydate\theyear\themonth\theday{}}
+\catcode`|=0
+\begin{filecontents*}[overwrite]{\jobname.xmpdata}
+\Title{|thetitle}
+\Author{|theauthor}
+\Language{|thelang}
+\Date{|isodate}
 \Keywords{keyword1\sep keyqord2\sep keyword3}
 \end{filecontents*}
+\egroup
 
 \hypersetup{hidelinks} % Hide link color boxes on pdf
 
